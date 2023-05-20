@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ItaLignua</string>
+    <string name="learn">Learn</string>
+    <string name="profile">Profile</string>
+    <string name="practice">Practice</string>
+    <string name="earned_xp">XP: </string>
+    <string name="learned_words">Words: </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
