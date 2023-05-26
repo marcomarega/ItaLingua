@@ -80,6 +80,9 @@ public class LessonActivity extends AppCompatActivity {
                         correctAnswer = exercise.getItalian();
                     }
                     String userAnswer = ((EditText)findViewById(R.id.exercise_plaintext)).getText().toString();
+                    if (userAnswer.strip().equals("")) {
+                        return;
+                    }
                     correctAnswer = correctAnswer.toLowerCase();
                     userAnswer = userAnswer.toLowerCase();
                     String[] correctAnswerWords = correctAnswer.split(" ");
@@ -97,6 +100,7 @@ public class LessonActivity extends AppCompatActivity {
                         taskCount++;
                         exerciseDdeque.offer(exerciseDdeque.peek());
                     }
+                    ((EditText)findViewById(R.id.exercise_plaintext)).setEnabled(false);
                 }
                 else if (Objects.equals(state, "Verdict")) {
                     exerciseDdeque.poll();
@@ -191,6 +195,7 @@ public class LessonActivity extends AppCompatActivity {
             findViewById(R.id.exercise_verdict).setBackgroundColor(R.color.white);
             ((Button)findViewById(R.id.exercise_button)).setText("OK");
             ((EditText)findViewById(R.id.exercise_plaintext)).setText("");
+            ((EditText)findViewById(R.id.exercise_plaintext)).setEnabled(true);
         }
         if (Objects.equals(exercise.getType(), "TaskItalian")) {
             findViewById(R.id.exercise_plaintext).setVisibility(View.VISIBLE);
@@ -202,6 +207,7 @@ public class LessonActivity extends AppCompatActivity {
             findViewById(R.id.exercise_verdict).setBackgroundColor(R.color.white);
             ((Button)findViewById(R.id.exercise_button)).setText("OK");
             ((EditText)findViewById(R.id.exercise_plaintext)).setText("");
+            ((EditText)findViewById(R.id.exercise_plaintext)).setEnabled(true);
         }
     }
 }

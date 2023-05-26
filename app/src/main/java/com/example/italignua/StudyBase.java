@@ -13,11 +13,6 @@ public class StudyBase {
     private static ArrayList<Exercise> exercises = new ArrayList<>();
 
     public static void initLessons() {
-        lessons.add(new Lesson("Learn simple pronounses", 10, new int[]{
-                0, 1, 2, 3, 4, 5, 6
-        }));
-
-
         exercises.clear();
         // 0
         exercises.add(
@@ -37,7 +32,7 @@ public class StudyBase {
         );
         // 4
         exercises.add(
-                new Exercise("New", "E", "And", new String[]{"E"})
+                new Exercise("New", "E (or 'ed' if it goes before the vowel)", "And", new String[]{"E"})
         );
         // 5
         exercises.add(
@@ -49,9 +44,28 @@ public class StudyBase {
         );
         // 7
         exercises.add(
-                new Exercise("Task", "Lui", "He", new String[]{"Lui"})
+                new Exercise("New", "Lui", "He", new String[]{"Lui"})
         );
         // 8
+        exercises.add(
+                new Exercise("New", "Lei", "She", new String[]{"Lei"})
+        );
+        // 9
+        exercises.add(
+                new Exercise("Task", "Lui e lei", "He and she", new String[]{"Lui", "Lei"})
+        );
+        // 10
+        exercises.add(
+                new Exercise("New", "Lui e'", "He is", new String[]{"Lui", "E'"})
+        );
+        // 11
+        exercises.add(
+                new Exercise("Task", "Lui e' e lei e'", "He is and she is", new String[]{"Lui", "Lei", "E", "E'"})
+        );
+
+        lessons.add(new Lesson("Learn simple pronounses", 15, new int[]{
+                0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+        }));
     }
 
     public static Exercise[] getExercises(int[] exercises_indexes) {
