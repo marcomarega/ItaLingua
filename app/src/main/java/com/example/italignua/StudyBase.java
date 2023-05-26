@@ -63,9 +63,100 @@ public class StudyBase {
                 new Exercise("Task", "Lui e' e lei e'", "He is and she is", new String[]{"Lui", "Lei", "E", "E'"})
         );
 
-        lessons.add(new Lesson("Learn simple pronounses", 15, new int[]{
+        lessons.add(new Lesson("Learn simple pronouns", 15, new int[]{
                 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
         }));
+
+        // 12
+        exercises.add(
+                new Exercise("New", "Noi", "We", new String[]{"Noi"})
+        );
+        // 13
+        exercises.add(
+                new Exercise("New", "Noi siamo", "We are", new String[]{"Noi", "Siamo"})
+        );
+        // 14
+        exercises.add(
+                new Exercise("New", "Voi", "You (plural, you all)", new String[]{"Voi"})
+        );
+        // 15
+        exercises.add(
+                new Exercise("New", "Voi siete", "You are (plural)", new String[]{"Voi", "Siete"})
+        );
+        // 16
+        exercises.add(
+                new Exercise("Task", "Noi siamo", "We are", new String[]{"Noi", "Siamo"})
+        );
+        // 17
+        exercises.add(
+                new Exercise("Task", "Noi siamo e voi siete", "We are and you are", new String[]{"Noi", "Siamo", "E", "Voi", "Siete"})
+        );
+        // 18
+        exercises.add(
+                new Exercise("New", "Loro", "They", new String[]{"Loro"})
+        );
+        // 19
+        exercises.add(
+                new Exercise("New", "Loro sono", "They are", new String[]{"Loro", "Sono"})
+        );
+        // 20
+        exercises.add(
+                new Exercise("Task", "Voi siete", "You are", new String[]{"Voi", "Siete"})
+        );
+        // 21
+        exercises.add(
+                new Exercise("Task", "Voi siete e loro sono", "You are and they are", new String[]{"Voi", "Siete", "E", "Loro", "Sono"})
+        );
+        // 22
+        exercises.add(
+                new Exercise("Task", "Noi, voi e loro", "We, you and they", new String[]{"Voi", "Noi", "E", "Loro"})
+        );
+
+        lessons.add(new Lesson("Learn simple pronouns II", 15, new int[] {
+                12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22
+        }));
+
+        // 23
+        exercises.add(
+                new Exercise("New", "All verbs that we have learned at that time are forms of the verb 'essere'\n" +
+                        "Io sono - I am\n" +
+                        "Tu sei - You are\n" +
+                        "Lui/Lei e' - He/She is\n" +
+                        "\n" +
+                        "Noi siamo - We are\n" +
+                        "Voi siete - You are (plural)\n" +
+                        "Loro sono - They are", "", new String[]{})
+        );
+        // 24
+        exercises.add(
+                new Exercise("Task", "Io e loro siamo", "I and they are", new String[]{"Io", "E", "Loro", "Siamo"})
+        );
+        // 25
+        exercises.add(
+                new Exercise("Task", "Voi e loro siete", "You and they are", new String[]{"Noi", "E", "Loro", "Siete"})
+        );
+        // 26
+        exercises.add(
+                new Exercise("Task", "Io e tu siamo", "I and you are", new String[]{"Io", "E", "Tu", "Siamo"})
+        );
+        // 27
+        exercises.add(
+                new Exercise("Task", "Lui e lei sono", "He and she are", new String[]{"Lui", "E", "Lei", "Sono"})
+        );
+        // 28
+        exercises.add(
+                new Exercise("Task", "Lui e loro sono", "He and they are", new String[]{"Lui", "E", "Loro", "Sono"})
+        );
+        // 29
+        exercises.add(
+                new Exercise("Task", "Noi e voi siamo", "We and you are", new String[]{"Noi", "E", "Voi", "Siamo"})
+        );
+
+        lessons.add(
+                new Lesson("Learn simple pronouns III", 18, new int[] {
+                        24, 25, 26, 27, 28, 29
+                })
+        );
     }
 
     public static Exercise[] getExercises(int[] exercises_indexes) {

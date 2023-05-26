@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="correct_color">#10CC10</color>
     <color name="wrong_color">#EE1616</color>
+    <color name="italy_1">#009246</color>
+    <color name="italy_2">#ffffff</color>
+    <color name="italy_3">#ce2b37</color>
 </resources>
