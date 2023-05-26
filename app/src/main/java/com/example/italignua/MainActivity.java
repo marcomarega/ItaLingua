@@ -4,17 +4,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.Theme_ItaLingua);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-        setTheme(R.style.Theme_ItaLignua);
+
 
         StudyBase.initLessons();
 
@@ -42,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
                         fragmentTransaction.commit();
                         break;
                     case R.id.practice_button:
+                        Intent intent = new Intent(getApplicationContext(), LessonActivity.class);
+                        intent.putExtra("lesson_index", -1);
+                        startActivityForResult(intent, 1);
                         break;
                 }
             }

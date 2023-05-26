@@ -57,43 +57,6 @@ public class LearnFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (resultCode) {
             case Activity.RESULT_OK:
-                Toast.makeText(getContext(), "OK", Toast.LENGTH_LONG).show();
-
-                double accuracy = data.getDoubleExtra("accuracy", 1);
-                int lessonIndex = data.getIntExtra("lessonIndex", 0);
-                int xp = StudyBase.getLessons().get(lessonIndex).getXp();
-                HashSet<String> words = StudyBase.getLessons().get(lessonIndex).getWords();
-
-                SQLiteDatabase database = dataBaseHelper.getWritableDatabase();
-
-                for (String word : words) {
-                    if (database.query(DBHelper.WORDS_TABLE_NAME, null, DBHelper.WORDS_COLUMN_WORD + " = \"" + word + "\"", null, null, null, null).getCount() != 0) continue;
-                    ContentValues contentValues = new ContentValues();
-                    contentValues.put(DBHelper.WORDS_COLUMN_WORD, word);
-
-                    database.insert(DBHelper.WORDS_TABLE_NAME, null, contentValues);
-                }
-
-                Cursor cursor = database.query(DBHelper.LESSONS_TABLE_NAME, new String[]{DBHelper.LESSONS_COLUMN_LESSON_ID}, "_id = -1", null, null, null, null);
-                int previous_xp = 0;
-                if (cursor.moveToFirst()) {
-                    int xpIndex = cursor.getColumnIndex(DBHelper.LESSONS_COLUMN_LESSON_ID);
-                    previous_xp = cursor.getInt(xpIndex);
-                }
-                cursor.close();
-
-                database.delete(DBHelper.LESSONS_TABLE_NAME, "_id = -1", null);
-
-                ContentValues contentValues = new ContentValues();
-                contentValues.put(DBHelper.LESSONS_COLUMN_ID, -1);
-                contentValues.put(DBHelper.LESSONS_COLUMN_LESSON_ID, previous_xp + xp);
-                database.insert(DBHelper.LESSONS_TABLE_NAME, null, contentValues);
-
-                if (database.query(DBHelper.LESSONS_TABLE_NAME, null, DBHelper.LESSONS_COLUMN_LESSON_ID + " = " + lessonIndex, null, null, null, null).getCount() == 0) {
-                    contentValues = new ContentValues();
-                    contentValues.put(DBHelper.LESSONS_COLUMN_LESSON_ID, lessonIndex);
-                    database.insert(DBHelper.LESSONS_TABLE_NAME, null, contentValues);
-                }
 
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.content_fragment, new LearnFragment()).commit();
